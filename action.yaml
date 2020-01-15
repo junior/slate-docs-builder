@@ -1,0 +1,16 @@
+name: Slate Docs Builder
+author: junior
+description: Builder for Slate Docs
+branding:
+  icon: 'book'
+  color: 'gray-dark'
+inputs:
+  slate_docs_dir:
+    description: 'Location / Path of Slate Docs'
+    default: '/docs'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.slate_docs_dir }}
